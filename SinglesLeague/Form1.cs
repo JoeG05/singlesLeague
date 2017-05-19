@@ -21,5 +21,11 @@ namespace SinglesLeague
         {
             Application.Exit();
         }
+
+        private void enterStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new SinglesLeague.Form2();
+            form2.Show();
+        }
     }
 }

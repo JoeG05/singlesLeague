@@ -32,9 +32,9 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thursdayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wednesdayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.standingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wednesdayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.standingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -77,6 +77,18 @@
             this.thursdayToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.thursdayToolStripMenuItem.Text = "&Thursday";
             // 
+            // scoreToolStripMenuItem
+            // 
+            this.scoreToolStripMenuItem.Name = "scoreToolStripMenuItem";
+            this.scoreToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.scoreToolStripMenuItem.Text = "Keep Score";
+            // 
+            // standingsToolStripMenuItem
+            // 
+            this.standingsToolStripMenuItem.Name = "standingsToolStripMenuItem";
+            this.standingsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.standingsToolStripMenuItem.Text = "Standings";
+            // 
             // wednesdayToolStripMenuItem
             // 
             this.wednesdayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -86,23 +98,12 @@
             this.wednesdayToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.wednesdayToolStripMenuItem.Text = "&Wednesday";
             // 
-            // scoreToolStripMenuItem
-            // 
-            this.scoreToolStripMenuItem.Name = "scoreToolStripMenuItem";
-            this.scoreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.scoreToolStripMenuItem.Text = "Keep Score";
-            // 
-            // standingsToolStripMenuItem
-            // 
-            this.standingsToolStripMenuItem.Name = "standingsToolStripMenuItem";
-            this.standingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.standingsToolStripMenuItem.Text = "Standings";
-            // 
             // enterStatsToolStripMenuItem
             // 
             this.enterStatsToolStripMenuItem.Name = "enterStatsToolStripMenuItem";
             this.enterStatsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.enterStatsToolStripMenuItem.Text = "Enter Stats";
+            this.enterStatsToolStripMenuItem.Click += new System.EventHandler(this.enterStatsToolStripMenuItem_Click);
             // 
             // standingsToolStripMenuItem1
             // 
