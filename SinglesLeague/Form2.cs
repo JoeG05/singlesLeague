@@ -92,9 +92,9 @@ namespace SinglesLeague
 
             string q = "INSERT INTO cdstats (Week, Name, W, L, scored, thrown, Allstars) VALUES ('" + week + "', '"
                 + name + "', '" + wins + "', '" + losses + "', '" + scoredTotal + "', '" + thrownTotal + "', '" + allstarsTotal + "')";
-            //s.Insert(q);
+            s.Insert(q);
 
-            MessageBox.Show("");
+            
             this.Close();
         }
     }

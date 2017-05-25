@@ -27,5 +27,11 @@ namespace SinglesLeague
             Form2 form2 = new SinglesLeague.Form2();
             form2.Show();
         }
+
+        private void scoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new SinglesLeague.Form3();
+            form3.Show();
+        }
     }
 }

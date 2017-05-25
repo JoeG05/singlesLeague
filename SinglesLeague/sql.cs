@@ -102,7 +102,7 @@ namespace SinglesLeague
             }
         }
 
-        public List<string> Select(string q)
+        public List<string> Select(string q, string x)
         {
             List<string> l = new List<string>();
 
@@ -113,7 +113,7 @@ namespace SinglesLeague
 
                 while (dataReader.Read())
                 {
-                    l.Add(dataReader["Player"] + "");
+                    l.Add(dataReader[x] + "");
                 }
 
                 dataReader.Close();
@@ -122,6 +122,27 @@ namespace SinglesLeague
             }
             else return l;
 
+        }
+
+        public List<int> Select(string q)
+        {
+            List<int> l = new List<int>();
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(q, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    l.Add(Convert.ToInt32( dataReader["key"]));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return l;
+            }
+
+           else return l;
         }
 
         public int Count(string q)
