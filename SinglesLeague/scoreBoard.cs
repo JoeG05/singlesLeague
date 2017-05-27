@@ -59,6 +59,8 @@ namespace SinglesLeague
             
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
                 updateAway(textBoxAwayScore.Text);
             }
             
@@ -73,6 +75,7 @@ namespace SinglesLeague
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
+                e.Handled = e.SuppressKeyPress = true;
                 updateHome(textBoxHomeScore.Text);
             }
         }
@@ -314,39 +317,39 @@ namespace SinglesLeague
                 "INSERT INTO abstats (week, player, opponent, w, l, first9, allstars, " +
                  "thirty, eighty, ninety5, ton40, ton80, outthrown, outhit, highout, " +
                  "bestleg, darts1, darts2, darts3, darts4, darts5, darts6, darts7, " +
-                 "darts8, darts9, darts10, darts11, dartstotal, score1, score2, score3, score4, " +
-                 "score5, score6, score7, score8, score9, score10, score11, scoretotal, user) VALUES " +
+                 "darts8, darts9, darts10, darts11, dartstotal, scored1, scored2, scored3, scored4, " +
+                 "scored5, scored6, scored7, scored8, scored9, scored10, scored11, scoredtotal, user) VALUES " +
                  "('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', " +
                  "'{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', " +
                  "'{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', " +
-                 "'{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}')",
-                a.week, a.player, a.opponent, a.w, a.l, a.first9, a.allstars, a.thirty, a.ninety5,
+                 "'{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}')",
+                a.week, a.player, a.opponent, a.w, a.l, a.first9, a.allstars, a.thirty, a.eighty, a.ninety5,
                 a.ton40, a.ton80, a.outthrown, a.outhit, a.highout, a.bestleg,
                 a.darts[1], a.darts[2], a.darts[3], a.darts[4], a.darts[5], a.darts[6],
                 a.darts[7], a.darts[8], a.darts[9], a.darts[10], a.darts[11], a.totalDarts, a.scored[1],
                 a.scored[2], a.scored[3], a.scored[4], a.scored[5], a.scored[6], a.scored[7],
-                a.scored[8], a.scored[9], a.scored[10], a.scored[11], a.totalScored, a.user
-                );
+                a.scored[8], a.scored[9], a.scored[10], a.scored[11], a.totalScored, a.user);
             s.Insert(q);
 
-            q = string.Format(
+            string z;
+            z = string.Format(
                 "INSERT INTO abstats (week, player, opponent, w, l, first9, allstars, " +
                  "thirty, eighty, ninety5, ton40, ton80, outthrown, outhit, highout, " +
                  "bestleg, darts1, darts2, darts3, darts4, darts5, darts6, darts7, " +
-                 "darts8, darts9, darts10, darts11, dartstotal, score1, score2, score3, score4, " +
-                 "score5, score6, score7, score8, score9, score10, score11, scoretotal, user) VALUES " +
+                 "darts8, darts9, darts10, darts11, dartstotal, scored1, scored2, scored3, scored4, " +
+                 "scored5, scored6, scored7, scored8, scored9, scored10, scored11, scoredtotal, user) VALUES " +
                  "('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', " +
                  "'{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', " +
                  "'{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', " +
-                 "'{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}, {39}, {40}')",
-                h.week, h.player, h.opponent, h.w, h.l, h.first9, h.allstars, h.thirty, h.ninety5,
+                 "'{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}')",
+                h.week, h.player, h.opponent, h.w, h.l, h.first9, h.allstars, h.thirty, h.eighty, h.ninety5,
                 h.ton40, h.ton80, h.outthrown, h.outhit, h.highout, h.bestleg,
                 h.darts[1], h.darts[2], h.darts[3], h.darts[4], h.darts[5], h.darts[6],
                 h.darts[7], h.darts[8], h.darts[9], h.darts[10], h.darts[11], h.totalDarts, h.scored[1],
                 h.scored[2], h.scored[3], h.scored[4], h.scored[5], h.scored[6], h.scored[7],
                 h.scored[8], h.scored[9], h.scored[10], h.scored[11], h.totalScored, h.user
                 );
-            s.Insert(q);
+            s.Insert(z);
 
             MessageBox.Show("Ending");
             this.Close();
