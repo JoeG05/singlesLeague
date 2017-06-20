@@ -150,6 +150,7 @@
             this.comboBoxOut.TabIndex = 12;
             this.comboBoxOut.TabStop = false;
             this.comboBoxOut.Text = "0";
+            this.comboBoxOut.Visible = false;
             // 
             // label1
             // 
@@ -185,6 +186,7 @@
             this.comboBoxThrown.TabIndex = 15;
             this.comboBoxThrown.TabStop = false;
             this.comboBoxThrown.Text = "3";
+            this.comboBoxThrown.Visible = false;
             // 
             // scoreBoard
             // 

@@ -146,10 +146,16 @@ namespace SinglesLeague
                 
             }
 
-            
+            if (score <= 170)
+            {
+                comboBoxOut.Visible = true;
+                comboBoxThrown.Visible = true;
+            }
+
             textBoxAwayScore.Text = "";
             labelAwayScore.Text = score.ToString();
             comboBoxOut.Text = "0";
+            comboBoxThrown.Text = "3";
             textBoxHomeScore.Focus();
         }
 
@@ -164,6 +170,8 @@ namespace SinglesLeague
 
             if (scored < 0 || scored > 180)
                 return;
+
+            
 
             temp = score - scored;
             int outs;
@@ -187,6 +195,7 @@ namespace SinglesLeague
 
                 if (score == 0)
                 {
+                    
                     h.turn(game, scored, darts);
                     h.takeout[game] = scored;
                     h.outThrow(outs);
@@ -207,9 +216,16 @@ namespace SinglesLeague
                 }
             }
 
+            if (score <= 170)
+            {
+                comboBoxOut.Visible = true;
+                comboBoxThrown.Visible = true;
+            }
+
             textBoxHomeScore.Text = "";
             labelHomeScore.Text = score.ToString();
             comboBoxOut.Text = "0";
+            comboBoxThrown.Text = "3";
             textBoxAwayScore.Focus();
         }
 
@@ -219,6 +235,8 @@ namespace SinglesLeague
             labelLeg.Text = game.ToString();
             labelAwayScore.Text = "501";
             labelHomeScore.Text = "501";
+            comboBoxOut.Visible = false;
+            comboBoxThrown.Visible = false;
            
             return;
         }
